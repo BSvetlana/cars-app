@@ -1,47 +1,70 @@
 <template>
   <div>
-   
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #C8E6C9;">
-    
-    <router-link to="/" class="navbar-brand"><b>Cars</b></router-link>
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      
-      <ul class="navbar-nav mr-auto">
-        
-        <li class="nav-item">
-          
-          <router-link to="cars" class="nav-link"><b></b></router-link>
-           </li>
-        
-        <li class="nav-item">
-          
-          <router-link to="products" class="nav-link"><b></b></router-link>
-           </li>
-          </ul>
-      
-      <form class="form-inline my-2 my-lg-0">
-         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">  
-         <button class="btn btn-outline-success my-2 my-sm-0"
-          type="submit">Search</button> 
-      </form>
-       </div>
-    </nav>
-
+  
+  
+    <div class="container mt-3 mr-1">
+      <div class="row">
+        <div class="col-8">
+          <h4 style="color: #66BB6A;">Cars list</h4>
+          <table class="table table-bordered">
+  
+            <thead style="background-color: #E8F5E9;">
+              <tr>
+                <th scope="col">Cars Brand</th>
+                <th scope="col">Cars Model</th>
+                <th scope="col">Cars Year</th>
+                <th>Cars Max Speed</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(car,index) in cars" :key="index">
+                <td>{{ car.brand }}</td>
+                <td>{{ car.model }}
+                </td>
+                <td>{{ car.year }}</td>
+  
+                <td>{{ car.maxSpeed }}</td>
+  
+  
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  
+  
   </div>
 </template>
 
 <script>
-export default {
-  name: 'AppCars',
-
-}
+  import {
+    cars
+  } from '../services/CarsService'
+  
+  export default {
+    name: 'AppCars',
+    data() {
+      return {
+        cars: []
+      }
+    },
+    created() {
+      cars.
+      getCarsAll
+        ()
+        .then((response) => {
+          this.cars = response.data
+          console.log(this.cars)
+        }).catch((error) => {
+          console.log(error)
+        })
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  
 </style>

@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    
-    <AppCars />
+      <Nav />
+      <router-view></router-view>
   </div>
 </template>
 
 <script>
-import AppCars from './components/AppCars.vue'
+import Nav from './components/Nav.vue'
   
 
 export default {
   name: 'app',
   components: {
-    AppCars
+    Nav
   }
 }
 </script>
