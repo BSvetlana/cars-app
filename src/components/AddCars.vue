@@ -70,7 +70,10 @@
               </div>
 
   
-            <button type="sumbit" class="btn btn-success btn-block" style="backgroud-color: #81C784;">Submit</button>
+            <button type="sumbit" class="btn btn-success btn-block" style="backgroud-color: #81C784;">Submit Form</button>
+            
+            <button @click="reset" type="sumbit" class="btn btn-success btn-block" style="backgroud-color: #81C784;">Reset Form</button>
+
           </form>
         </div>
       </div>
@@ -117,6 +120,9 @@ import { cars } from '../services/CarsService.js'
           }).catch((error) => {
           console.log(error)
         })
+      },
+      reset(){
+        this.newCars = {}
       }
     }
   }
