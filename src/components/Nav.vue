@@ -13,12 +13,12 @@
   
                   <li class="nav-item">
   
-                      <router-link to="cars" class="nav-link"><b></b></router-link>
+                      <router-link to="cars" class="nav-link"><b>Cars List</b></router-link>
                   </li>
   
                   <li class="nav-item">
   
-                      <router-link to="products" class="nav-link"><b></b></router-link>
+                      <router-link to="addcars" class="nav-link"><b>Add Cars</b></router-link>
                   </li>
               </ul>
   
