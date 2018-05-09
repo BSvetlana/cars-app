@@ -2,9 +2,9 @@
   <div>
   
   
-    <div class="container mt-3 mr-1">
+    <div class="container mt-3 ">
       <div class="row">
-        <div class="col-8">
+        <div class="col-12">
           <h4 style="color: #66BB6A;">Cars list</h4>
           <table class="table table-bordered">
   
@@ -14,6 +14,9 @@
                 <th scope="col">Cars Model</th>
                 <th scope="col">Cars Year</th>
                 <th>Cars Max Speed</th>
+                <th>Number of Doors</th>
+                <th>Automatic</th>
+                <th>Engine</th>
                 
               </tr>
             </thead>
@@ -23,9 +26,10 @@
                 <td>{{ car.model }}
                 </td>
                 <td>{{ car.year }}</td>
-  
                 <td>{{ car.maxSpeed }}</td>
-  
+                <td>{{ car.numberOfDoors}}</td>
+                <td>{{ car.isAutomatic ? 'Yes' : 'No' }}</td>
+                <td> {{car.engine}}</td>
   
               </tr>
             </tbody>

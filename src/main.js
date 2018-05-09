@@ -5,10 +5,15 @@ import BootstrapVue from "bootstrap-vue/dist/bootstrap-vue.esm";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
+
+
 import VueRouter from "vue-router";
 
 import AppCars from './components/AppCars.vue'
 import AddCars from './components/AddCars.vue'
+import VModal from "vue-js-modal";
+
+Vue.use(VModal);
 
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
@@ -24,6 +29,7 @@ const router = new VueRouter({
   routes,
   mode: 'history'
 })
+
 new Vue({
   router,
   render: h => h(App)
