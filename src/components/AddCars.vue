@@ -48,18 +48,18 @@
               </modal>
             <div class="form-group">
               <label for="brand" style="color: #81C784;">Cars Brand</label>
-              <input type="text" class="form-control" id="brand" placeholder="cars brand .." v-model="newCars.brand">
+              <input type="text" class="form-control" id="brand" placeholder="cars brand .." v-model="newCars.brand" required="required" minlength="2">
             </div>
   
             <div class="form-group">
               <label for="model" style="color: #81C784;">Cars Model</label>
-              <input type="text" class="form-control" id="model" placeholder="cars model ..." v-model="newCars.model">
+              <input type="text" class="form-control" id="model" placeholder="cars model ..." v-model="newCars.model" required="required" minlength="2">
             </div>
   
             <div class="form-group">
               <label for="year" class="control-label col-xs-4" style="color: #81C784;"> Year </label>
               <div class="col-xs-8">
-                <select id="select" name="year" class="select form-control" v-model="newCars.year">
+                <select id="select" name="year" class="select form-control" v-model="newCars.year" required="required">
           
                       <option :value=" year" v-for="year in years" :key = "year" >{{ year }}</option>
                                                     
@@ -75,35 +75,35 @@
   
             <div class="form-group">
               <label for="numberOfDoors" style="color: #81C784;">Cars Number of Doors</label>
-              <input type="number" class="form-control" id="numberOfDoors" placeholder="cars numberOfDoors ..." v-model="newCars.numberOfDoors">
+              <input type="number" class="form-control" id="numberOfDoors" placeholder="cars numberOfDoors ..." v-model="newCars.numberOfDoors" required="required">
             </div>
   
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="isAutomatic" v-model="newCars.isAutomatic">
+              <input class="form-check-input" type="checkbox" value="" id="isAutomatic" v-model="newCars.isAutomatic" required="required">
               <label class="form-check-label" for="defaultCheck1">
                     Is Automatic
                   </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="disel"  v-model="newCars.engine">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="disel"  v-model="newCars.engine" required="required">
               <label class="form-check-label" for="exampleRadios1">
                     Diesel
                   </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="petrol" v-model="newCars.engine">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="petrol" v-model="newCars.engine" required="required">
               <label class="form-check-label" for="exampleRadios1">
                     Petrol
                   </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="electric" v-model="newCars.engine">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="electric" v-model="newCars.engine" required="required">
               <label class="form-check-label" for="exampleRadios1">
                     Electric
                   </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="hybrid" v-model="newCars.engine">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="hybrid" v-model="newCars.engine" required="required">
               <label class="form-check-label" for="exampleRadios1">
                     Hybrid
                   </label>

@@ -11,7 +11,12 @@ import VueRouter from "vue-router";
 
 import AppCars from './components/AppCars.vue'
 import AddCars from './components/AddCars.vue'
+
 import VModal from "vue-js-modal";
+
+import VueValidator from "vue-form-validator";
+
+Vue.use(VueValidator);
 
 Vue.use(VModal);
 
