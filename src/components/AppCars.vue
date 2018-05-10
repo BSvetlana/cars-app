@@ -10,33 +10,38 @@
   
             <thead style="background-color: #E8F5E9;">
               <tr>
-                <th scope="col">Cars Brand</th>
-                <th scope="col">Cars Model</th>
-                <th scope="col">Cars Year</th>
-                <th>Cars Max Speed</th>
-                <th>Number of Doors</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Model</th>
+                <th scope="col">Year</th>
+                <th>Speed</th>
+                <th>Doors</th>
                 <th>Automatic</th>
                 <th>Engine</th>
-                <th></th>
+                <th>Edit car</th>
+                <th>Delete</th>
                 
               </tr>
             </thead>
             <tbody>
               <tr v-for="(car,index) in cars" :key="index">
+
                 <td>{{ car.brand }}</td>
                 <td>{{ car.model }}
                 </td>
                 <td>{{ car.year }}</td>
                 <td>{{ car.maxSpeed }}</td>
                 <td>{{ car.numberOfDoors}}</td>
-                <td>{{ car.isAutomatic ? 'Yes' : 'No' }}</td>
+                <td>{{ car.isAutomatic ? 'Automatic' : 'Manual' }}</td>
                 <td> {{car.engine}}</td>
-                <td style="background: #44ac5a">
+                <td>
                    <router-link
                     style="color: black; text-decoration:none  "
                     :to="{name: 'edit', params: { id: car.id }}">
-                    <b>Edit</b>                
+                    <button class="btn btn-outline-success btn-sm">Edit car</button>               
                   </router-link>
+                </td>
+                <td>
+                  <button class="btn btn-outline-danger btn-sm" @click="deleteCar(car.id)">Delete</button>
                 </td>
   
               </tr>
@@ -64,14 +69,22 @@
     },
     created() {
       cars.
-      getCarsAll
-        ()
-        .then((response) => {
+      getCarsAll()
+       .then((response) => {
           this.cars = response.data
           console.log(this.cars)
         }).catch((error) => {
           console.log(error)
         })
+    },
+    methods: {
+      deleteCar(id) {
+        cars.delete(id)
+          .then((sucess) => {
+            this.cars = {}
+            this.$router.push({name: 'cars'})
+          })
+      }
     }
   }
 </script>

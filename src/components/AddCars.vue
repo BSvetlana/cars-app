@@ -6,7 +6,7 @@
           <h4 style="color: #66BB6A;">Cars form</h4>
           <form @submit.prevent="submit">
   
-            <modal name="hello-world">
+            <modal name="alert-cars">
               <button @click="hide" class="btn btn-success " style="background-color: #ff7675; float: right">X</button>
   
               <div class="container mt-4 ml-4">
@@ -188,10 +188,10 @@
       },
       preview() {
   
-        this.$modal.show('hello-world');
-      },
+        this.$modal.show('alert-cars');
+        },
       hide() {
-        this.$modal.hide('hello-world');
+        this.$modal.hide('alert-cars');
       }
     }
   }
