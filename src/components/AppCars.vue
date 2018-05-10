@@ -17,6 +17,7 @@
                 <th>Number of Doors</th>
                 <th>Automatic</th>
                 <th>Engine</th>
+                <th></th>
                 
               </tr>
             </thead>
@@ -30,6 +31,13 @@
                 <td>{{ car.numberOfDoors}}</td>
                 <td>{{ car.isAutomatic ? 'Yes' : 'No' }}</td>
                 <td> {{car.engine}}</td>
+                <td style="background: #44ac5a">
+                   <router-link
+                    style="color: black; text-decoration:none  "
+                    :to="{name: 'edit', params: { id: car.id }}">
+                    <b>Edit</b>                
+                  </router-link>
+                </td>
   
               </tr>
             </tbody>

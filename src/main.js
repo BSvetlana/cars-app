@@ -27,7 +27,8 @@ Vue.config.productionTip = false
 const routes = [
   {path: '/', redirect: 'cars'},
   {path: '/cars', component: AppCars, name: 'cars'},
-  {path: '/addcars', component: AddCars, name: 'add-cars'}
+  {path: '/addcars', component: AddCars, name: 'add-cars'},
+  {path: '/edit/:id', component: AddCars, name: 'edit'}
 ]
 
 const router = new VueRouter({
